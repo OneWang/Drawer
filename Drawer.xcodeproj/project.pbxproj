@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A42107E1D4A330E0081ABF7 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A42107D1D4A330E0081ABF7 /* NewsViewController.m */; };
 		0AC726271D0FAA9500201F47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC726261D0FAA9500201F47 /* main.m */; };
 		0AC7262A1D0FAA9500201F47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC726291D0FAA9500201F47 /* AppDelegate.m */; };
 		0AC726321D0FAA9500201F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC726311D0FAA9500201F47 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A42107C1D4A330E0081ABF7 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		0A42107D1D4A330E0081ABF7 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		0AC726221D0FAA9500201F47 /* Drawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC726261D0FAA9500201F47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AC726281D0FAA9500201F47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +94,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4210781D4A32E50081ABF7 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				0A4210791D4A32E50081ABF7 /* Controllers */,
+				0A42107A1D4A32E50081ABF7 /* Views */,
+				0A42107B1D4A32E50081ABF7 /* Models */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		0A4210791D4A32E50081ABF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A42107C1D4A330E0081ABF7 /* NewsViewController.h */,
+				0A42107D1D4A330E0081ABF7 /* NewsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0A42107A1D4A32E50081ABF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A42107B1D4A32E50081ABF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0AC726191D0FAA9500201F47 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +190,7 @@
 		0AC726581D0FAB5900201F47 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				0A4210781D4A32E50081ABF7 /* News */,
 				0AC726761D100D0600201F47 /* Setting */,
 				0AC726651D0FAF7700201F47 /* Home */,
 				0AC726691D0FAF7700201F47 /* Message */,
@@ -449,6 +486,7 @@
 				0AC726271D0FAA9500201F47 /* main.m in Sources */,
 				0AC726611D0FABF900201F47 /* ContainerViewController.m in Sources */,
 				0AC7266F1D0FAF8100201F47 /* HomeViewController.m in Sources */,
+				0A42107E1D4A330E0081ABF7 /* NewsViewController.m in Sources */,
 				0AC726641D0FAC8A00201F47 /* MenuViewController.m in Sources */,
 				0AC7267C1D100D1200201F47 /* SettingViewController.m in Sources */,
 			);
@@ -670,6 +708,7 @@
 				0AC726511D0FAA9500201F47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC726521D0FAA9500201F47 /* Build configuration list for PBXNativeTarget "DrawerTests" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +717,7 @@
 				0AC726541D0FAA9500201F47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC726551D0FAA9500201F47 /* Build configuration list for PBXNativeTarget "DrawerUITests" */ = {
 			isa = XCConfigurationList;
@@ -686,6 +726,7 @@
 				0AC726571D0FAA9500201F47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

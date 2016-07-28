@@ -1,30 +1,26 @@
 //
-//  MessageViewController.m
+//  NewsViewController.m
 //  Drawer
 //
-//  Created by LI on 16/6/14.
+//  Created by LI on 16/7/28.
 //  Copyright © 2016年 LI. All rights reserved.
 //
 
-#import "MessageViewController.h"
+#import "NewsViewController.h"
 #import "ContainerViewController.h"
 
-@interface MessageViewController ()
+@implementation NewsViewController
 
-@end
-
-@implementation MessageViewController
-
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    //设置导航栏
     [self customNavigation];
 }
 
 - (void)customNavigation{
     //设置标题背景
-    self.title = @"消息";
+    self.title = @"新闻";
     self.view.backgroundColor = [UIColor whiteColor];
     //投影颜色,偏移显示,投影透明度,投影半径
     self.navigationController.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -41,10 +37,4 @@
 - (void)openCloseMenu:(UIBarButtonItem *)sender{
     [self.navigationController.parentViewController performSelector:@selector(openCloseMenu)];
 }
-
-- (void)dealloc
-{
-    NSLog(@"MessageViewController----dealloc");
-}
-
 @end

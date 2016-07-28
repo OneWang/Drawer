@@ -13,6 +13,7 @@
 /** 子控制器 */
 #import "HomeViewController.h"
 #import "MessageViewController.h"
+#import "NewsViewController.h"
 
 @interface ContainerViewController ()<MenuViewControllerDelegate>
 
@@ -53,13 +54,15 @@
 - (void)addContentControllers{
     //完成两个主控制器的添加
     HomeViewController *home = [[HomeViewController alloc] init];
-    home.view.backgroundColor = [UIColor cyanColor];
     CustomNavigationController *homeNav = [[CustomNavigationController alloc] initWithRootViewController:home];
     
     MessageViewController *message = [[MessageViewController alloc] init];
     CustomNavigationController *messageNav = [[CustomNavigationController alloc] initWithRootViewController:message];
     
-    self.viewControllers = @[homeNav,messageNav];
+    NewsViewController *news = [[NewsViewController alloc] init];
+    CustomNavigationController *newNav = [[CustomNavigationController alloc] initWithRootViewController:news];
+    
+    self.viewControllers = @[homeNav,messageNav,newNav];
     self.contentViewController = homeNav;
 }
 
@@ -97,6 +100,7 @@
         if (!custom.isMenuOpen) {
             self.contentViewController.view.transform = CGAffineTransformMakeTranslation(180, 0);
             [self.contentViewController.view addSubview:custom.cover];
+            
         }else{
             self.contentViewController.view.transform = CGAffineTransformIdentity;
         }
