@@ -41,6 +41,7 @@
     //添加子控制器
     [self addContentControllers];
 }
+
 //封装菜单界面
 - (void)addMenuViewController{
     //添加菜单控制器
@@ -85,17 +86,15 @@
     _contentViewController = contentViewController;
     [self addChildViewController:contentViewController];
     [self.view addSubview:contentViewController.view];
-    
 }
 
 //侧边按钮的动画
 - (void)openCloseMenu{
-  
     CustomNavigationController *custom = (CustomNavigationController *)self.contentViewController;
     [custom.cover removeFromSuperview];
     if (self.isAnimating) return;
     
-    [UIView animateWithDuration:0.15 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.isAnimating = YES;
         if (!custom.isMenuOpen) {
             self.contentViewController.view.transform = CGAffineTransformMakeTranslation(180, 0);

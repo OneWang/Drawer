@@ -26,7 +26,6 @@
 }
 
 - (void)addMenuItems{
-    
     //创建菜单栏上面的按钮
     UIButton *item1 = [self createItemTitle:@"按钮1" withFrame:CGRectMake(0, 100, 180, 44) withFontSize:20 withAction:@selector(menuItemSelected:) withTag:1];
     self.selectedButton = item1;

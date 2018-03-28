@@ -20,54 +20,6 @@
 
 @implementation CustomNavigationController
 
-#pragma mark 懒加载
-- (NSMutableArray *)images
-{
-    if (!_images) {
-        _images = [[NSMutableArray alloc] init];
-    }
-    return _images;
-}
-
-- (UIImageView *)lastVcView
-{
-    if (!_lastVcView) {
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        UIImageView * image = [[UIImageView alloc] init];
-        image.frame = window.bounds;
-        self.lastVcView = image;
-    }
-    return _lastVcView;
-}
-
-//- (UIView *)cover
-//{
-//    if (!_cover) {
-//        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-//        UIView * cover = [[UIView alloc] init];
-//        cover.frame = window.bounds;
-//        cover.backgroundColor = [UIColor blackColor];
-//        cover.alpha = 0.3;
-//        cover.tag = 100;
-//        self.cover = cover;
-//    }
-//    return _cover;
-//}
-#pragma mark - 懒加载
-- (UIButton *)cover
-{
-    if (!_cover) {
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        UIButton * cover = [[UIButton alloc] init];
-        cover.frame = window.bounds;
-        cover.backgroundColor = [UIColor blackColor];
-        cover.alpha = 0.3;
-        self.cover = cover;
-        [cover addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _cover;
-}
-
 - (void)buttonClick:(UIButton *)btn{
     [self.cover removeFromSuperview];
     [UIView animateWithDuration:0.15 animations:^{
@@ -147,8 +99,7 @@
 //    }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     if (self.images.count > 0) return;
@@ -159,8 +110,7 @@
 /**
  *  产生截图
  */
-- (void)createScreenShot
-{
+- (void)createScreenShot{
     //开启图形上下文
     UIGraphicsBeginImageContextWithOptions(self.view.frame.size, YES, 0.0);
     //将图层渲染到屏幕上
@@ -174,8 +124,7 @@
     [self.images addObject:image];
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     [super pushViewController:viewController animated:animated];
     
     if (self.images.count == 0) return;
@@ -183,5 +132,33 @@
     [self createScreenShot];
 }
 
+#pragma mark - 懒加载
+- (UIButton *)cover{
+    if (!_cover) {
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        UIButton * cover = [[UIButton alloc] init];
+        cover.frame = window.bounds;
+        cover.backgroundColor = [UIColor blackColor];
+        cover.alpha = 0.3;
+        [cover addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _cover;
+}
+
+- (NSMutableArray *)images{
+    if (!_images) {
+        _images = [[NSMutableArray alloc] init];
+    }
+    return _images;
+}
+
+- (UIImageView *)lastVcView{
+    if (!_lastVcView) {
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        UIImageView * image = [[UIImageView alloc] init];
+        image.frame = window.bounds;
+    }
+    return _lastVcView;
+}
 
 @end
